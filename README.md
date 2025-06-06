@@ -7,6 +7,8 @@
 ## 1 install🔧
 
 ```shell
+git clone https://github.com/ToolForVol/DRP-PSM.git
+cd DRP-PSM
 conda env create -f environment.yml
 conda activate drp-psm
 ```
@@ -32,7 +34,7 @@ with open("/YOUR_PATH/DRP-PSM/DNA_features/code/params_config.yaml") as f: # TOD
 
 1. Download whole repository
 
-The original feature data are quite large, you can download the complete version on [figshare online]: 10.6084/m9.figshare.29254889 
+The original feature data are quite large, you can download the complete version on `figshare online`: 10.6084/m9.figshare.29254889 
 
 
 
