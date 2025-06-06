@@ -1,0 +1,172 @@
+# 💡 This is the best training params for different DNA sequence length.
+21bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss
+    - auc
+  num_leaves: 60
+  max_depth: 4
+  max_bin: 25
+  min_data_in_leaf: 91
+  learning_rate: 0.08
+  feature_fraction: 0.8
+  bagging_fraction: 1.0
+  bagging_freq: 40
+  lambda_l1: 0.5
+  lambda_l2: 0.1
+  min_split_gain: 0.1
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+51bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss
+    - auc
+  num_leaves: 50
+  max_depth: 4
+  max_bin: 75
+  min_data_in_leaf: 101
+  learning_rate: 0.08
+  feature_fraction: 0.9
+  bagging_fraction: 0.9
+  bagging_freq: 5
+  lambda_l1: 0.5
+  lambda_l2: 0.0001
+  min_split_gain: 0.3
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+81bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss 
+    - auc
+  num_leaves: 50
+  max_depth: 4
+  max_bin: 145
+  min_data_in_leaf: 41
+  learning_rate: 0.09
+  feature_fraction: 0.6
+  bagging_fraction: 0.8
+  bagging_freq: 30
+  lambda_l1: 0.1
+  lambda_l2: 0.0 
+  min_split_gain: 0.7
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+111bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss 
+    - auc
+  num_leaves: 10
+  max_depth: 6
+  max_bin: 85
+  min_data_in_leaf: 51
+  learning_rate: 0.09
+  feature_fraction: 0.9
+  bagging_fraction: 0.9
+  bagging_freq: 35
+  lambda_l1: 0.1
+  lambda_l2: 0.0
+  min_split_gain: 0.0
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+141bp:
+  boosting_type: gbdt
+  objective: binary
+  metric:
+    - binary_logloss 
+    - auc
+  num_leaves: 75
+  max_depth: 4
+  max_bin: 185
+  min_data_in_leaf: 1
+  learning_rate: 0.08
+  feature_fraction: 0.7
+  bagging_fraction: 0.9
+  bagging_freq: 25
+  lambda_l1: 0.9
+  lambda_l2: 0.9
+  min_split_gain: 1.0
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+171bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss 
+    - auc
+  num_leaves: 60
+  max_depth: 4
+  max_bin: 255
+  min_data_in_leaf: 60
+  learning_rate: 0.08
+  feature_fraction: 0.7
+  bagging_fraction: 1.0
+  bagging_freq: 25
+  lambda_l1: 0.5
+  lambda_l2: 0.01
+  min_split_gain: 0.0
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+201bp:
+  boosting_type: gbdt
+  objective: binary
+  metric: 
+    - binary_logloss
+    - auc
+  num_leaves: 60
+  max_depth: 6
+  max_bin: 225
+  min_data_in_leaf: 10
+  learning_rate: 0.08
+  feature_fraction: 1.0
+  bagging_fraction: 1.0
+  bagging_freq: 5
+  lambda_l1: 0.9
+  lambda_l2: 1e-05
+  min_split_gain: 0.9
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
+
+# 💡 train params for DART to run lightGBM
+selection_params:
+  boosting: dart
+  objective: binary
+  metric: 
+    - binary_logloss
+    - auc  
+  drop_rate: 0.1
+  drop_seed: 1
+  max_drop: 3
+  num_leaves: 7
+  max_depth: 3       
+  max_bin: 255
+  min_data_in_leaf: 61    
+  learning_rate: 0.01 
+  feature_fraction: 1.0
+  bagging_fraction: 1.0
+  bagging_freq: 45
+  lambda_l1: 0.001
+  lambda_l2: 0.4  
+  min_split_gain: 0.0
+  verbosity: -1
+  is_unbalance: False
+  n_jobs: 4
