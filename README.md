@@ -32,7 +32,7 @@ with open("/YOUR_PATH/DRP-PSM/DNA_features/code/params_config.yaml") as f: # TOD
 
 1. Download whole repository
 
-The original feature data are quite large, you can download the complete version on [Zenodo online](10.5281/zenodo.15606767) 
+The original feature data are quite large, you can download the complete version on [figshare online]: 10.6084/m9.figshare.29254889 
 
 
 
