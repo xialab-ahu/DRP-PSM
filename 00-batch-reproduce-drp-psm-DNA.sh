@@ -8,7 +8,7 @@
 seq_lengths=(21 51 81 111 141 171 201)
 DNA_ROOT="/YOUR_ABS_PATH/DRP-PSM/DNA_features" # TODO 🚨 Replace this path with your absolute path
 
-# 遍历 DNA 
+
 for seq in "${seq_lengths[@]}"; do
     echo "[INFO-DNA-Feature-Selection] Selecting features with DART and searching best params for ${seq}bp..."
 
