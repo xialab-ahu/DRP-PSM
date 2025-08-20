@@ -115,7 +115,68 @@ python ./Protein_features/code/5_train_solely_on_structure.py \
 Please refer to the `./code/1-reproduce-paper-chart/Figure*.ipynb` directory to reproduce every figure in our work.
 
 
-## 3 citaion📃
+## 3 Whole Genome Prediction🧬
+
+We provide an offline version for feature extraction and prediction across the human whole genome.
+
+### 3.1 Script Download
+
+First, download the offline version from [Zenodo](https://figshare.com/articles/software/DRP-PSM_CLI/29948723?file=57305909) and unzip:
+
+```shell
+wget https://figshare.com/ndownloader/files/57305909
+unzip DRP-PSM-CLI.zip
+```
+
+### 3.2 Environment Setup
+
+Your environment requires a GPU to run some of the feature extraction modules.
+
+```shell
+cd DRP-PSM/ymls
+conda env create -f drp-psm.yml
+conda env create -f R.yml
+conda env create -f netsurfp3.yml
+conda env create -f mathfeature.yml
+conda env create -f ifeatureOmega.yml
+```
+
+### 3.3 Inference
+
+1. Input format:
+
+The input should be in VCF (Variant Call Format), with at least the columns `#CHROM POS ID REF ALT`, e.g.:
+
+```vcf
+#CHROM	POS	ID	REF	ALT
+X	139537074	.	A	G
+2	71515751	.	G	A
+1	151028944	.	G	A
+6	64590263	.	T	A
+```
+
+2. Run inference:
+
+```shell
+chmod +x 0-run-predict.sh
+./0-run-predict.sh
+
+# Then you will see: 
+Your task_dir [default ]: demo2 # directory for this task (intermediate and final outputs)
+Your vcf_input_path [default test.vcf]: 1000.vcf # your input VCF file
+```
+
+3. Output format:
+
+After completion, the output will be available at `task_dir/pred.output.csv`. The first three columns are `Variant38`, the drp-psm output, and the label. The remaining columns are feature values (based on interactions computed by OpenFE).
+We used 0.6 as a threshold here, but drp-psm does not have a fixed threshold; users can adjust it based on their own needs.
+
+### 3.4 Prediction Efficiency
+
+On a platform with a 32-core AMD EPYC 7302 CPU and two NVIDIA RTX 3090 GPUs (24GB each), feature extraction and prediction for 1,000 variants takes 488 seconds.
+
+
+## 4 citaion📃
 
 If you find our work helpful, please cite:
 
